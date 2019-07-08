@@ -3,14 +3,19 @@ import './navigator/page_one.dart';
 import './navigator/page_two.dart';
 import './navigator/page_three.dart';
 import './navigator/page_params.dart';
+import 'package:flutter/rendering.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  debugPaintSizeEnabled = false;
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+//      showPerformanceOverlay: true,
       title: 'Home Page',
       theme: ThemeData.light(),
       home: MyHomePage('Home Page'),
@@ -43,9 +48,9 @@ class MyHomePage extends StatelessWidget {
             trailing: Icon(Icons.navigate_next),
             leading: Icon(Icons.star),
             onTap: () =>
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => NavigatorPageOne(),
-                        settings: RouteSettings(name: 'page_one'))),
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => NavigatorPageOne(),
+                    settings: RouteSettings(name: 'page_one'))),
           ),
         ],
       ),
