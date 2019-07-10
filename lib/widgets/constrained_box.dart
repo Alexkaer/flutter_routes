@@ -25,14 +25,17 @@ class ConstrainedBoxDemo extends StatelessWidget {
               child:
                   DecoratedBox(decoration: BoxDecoration(color: Colors.blue)),
             ),
-            ConstrainedBox(
-                constraints: BoxConstraints.loose(Size(400, 400)),
-                child: Container(
-                  width: 200,
-                  height: 400,
-                  child: DecoratedBox(
-                      decoration: BoxDecoration(color: Colors.green)),
-                )),
+            Expanded(
+              flex: 1,
+              child: ConstrainedBox(
+                  constraints: BoxConstraints.loose(Size(400, 400)),
+                  child: Container(
+                    width: 200,
+                    height: 400,
+                    child: DecoratedBox(
+                        decoration: BoxDecoration(color: Colors.green)),
+                  )),
+            ),
           ],
         ));
   }

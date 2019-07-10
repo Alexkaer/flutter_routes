@@ -1,3 +1,4 @@
+import './widgets/widgets_page.dart';
 import 'package:flutter/material.dart';
 import './navigator/page_one.dart';
 import './navigator/page_two.dart';
@@ -45,12 +46,23 @@ class MyHomePage extends StatelessWidget {
           ListTile(
             title: Text('Navigator'),
             contentPadding: const EdgeInsets.all(8.0),
-            trailing: Icon(Icons.navigate_next),
-            leading: Icon(Icons.star),
+            trailing: const Icon(Icons.navigate_next),
+            leading: const Icon(Icons.star),
             onTap: () =>
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => NavigatorPageOne(),
                     settings: RouteSettings(name: 'page_one'))),
+          ),
+          ListTile(
+            contentPadding: const EdgeInsets.all(8),
+            leading: const Icon(Icons.star),
+            title: const Text('Widgets'),
+            trailing: const Icon(Icons.navigate_next),
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                return WidgetsPage();
+              }));
+            },
           ),
         ],
       ),
