@@ -5,6 +5,8 @@ import 'transform_demo.dart';
 import 'text_page.dart';
 import 'button_page.dart';
 import 'image_and_icon.dart';
+import 'text_field_page.dart';
+import 'form_page.dart';
 
 class WidgetsPage extends StatelessWidget {
   @override
@@ -62,6 +64,24 @@ class WidgetsPage extends StatelessWidget {
                 .push(MaterialPageRoute(builder: (context) {
               return ImageAndIcon();
             })),
+          ),
+          ListTile(
+            title: Text('TextFieldDemo'),
+            trailing: Icon(Icons.navigate_next),
+            onTap: () =>
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) {
+                  return TextFieldDemo();
+                })),
+          ),
+          ListTile(
+            title: Text('FormDemo'),
+            trailing: Icon(Icons.navigate_next),
+            onTap: () =>
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) {
+                  return FormDemo();
+                })),
           ),
         ],
       ),
